@@ -1,5 +1,7 @@
 <?php 
 
+error_reporting(0);
+
 class ErrorLog{
 
     public $logfile, $type, $secondType, $firstType, $output;
@@ -37,7 +39,7 @@ class ErrorLog{
                 $output = $this->type;
             }
             $file = fopen($output,"w");
-            if(fwrite($file, $data) == true){
+            if(fwrite($file, $data) == false){
                 $data = 'Gagal save output file!';
             }
         }
